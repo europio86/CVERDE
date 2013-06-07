@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="favicon.ico" rel='icon' type='image/x-icon'/>
+<link href="favicon.ico" rel='shortcut icon' type='image/x-icon'/>
+<title>Cruz Verde - Guateros</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet" />
+<link href="../css/estilo.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+	<div id="content_tab" class="bg_inter">
+		<div id="header" class="bg_bambu">
+			<h1>Selecciona tu modelo favorito</h1>
+		</div>
+		
+		<div id="masc">
+			<div id="sabana">
+				<div id="seleccion">
+					<form id="select_model" action="#"> 
+						<ul class="clearfix">
+							<li class="model_1" ><input type="radio" name="modelo" value="hipopotamo"/></li>
+							<li class="model_2" ><input type="radio" name="modelo" value="jirafa"/></li>
+							<li class="model_3" ><input type="radio" name="modelo" value="cerda"/></li>
+							<li class="model_4" ><input class="abajo" type="radio" name="modelo" value="rana" /></li>
+							<li class="model_5" ><input class="abajo" type="radio" name="modelo" value="clasico_rosado" /></li>
+							<li class="model_6" ><input class="abajo" type="radio" name="modelo" value="clasico_azul" /></li>
+						</ul>
+					</form>
+					
+					<a href="indexv.html" class="btn_volver left" title="Volver">Volver</a>
+					<a href="javascript:void(0)" id="btform" class="btn_gen right" title="Siguiente">Siguiente</a>
+					
+				</div><!--seleccion-->
+				
+				<div id="registrate">
+					<form id="registro"  action="paso_4.html"> 
+						<fieldset>
+							<ul>
+								<li><label>Nombre</label> <input maxlength="30" type="text" name="nombre" class="xl" id="nombre" data-type="text" data-importance="important"/></li>
+								<li><label>Apellidos</label> <input maxlength="30" type="text" name="apellidos" class="xl" data-type="text" data-importance="important"/></li>
+								<li><label>Rut</label> <input maxlength="9" type="text" name="rut" class="m" data-type="rut" data-part="1"/><span>-</span><input maxlength="1" type="text" name="dv" class="xs" data-type="rut" data-part="2" data-importance="important"/></li>
+								<li><label>Email</label> <input maxlength="50" type="text" name="email" class="s" data-type="email" data-part="1"/><span>@</span><input maxlength="50" type="text" name="email" class="s" data-type="email" data-importance="important" data-part="2"/></li>
+								<li><label>Teléfono</label> <input maxlength="9" type="text" name="telefono" class="m" data-type="number" data-importance="important"/></li>
+								<li><label>Dirección</label> <input maxlength="50" type="text" name="direccion" class="l" data-type="text" data-importance="important"/></li>
+								<li><label>Comuna</label> <input maxlength="50" type="text" name="comuna" class="l" data-type="text" data-importance="important"/></li>
+								<li class="check"><input id="term" type="checkbox" checked /><label for="term">Acepto términos y condiciones</label></li>
+							</ul>
+							<a class="btn_volver" href="javascript:void(0)" title="Volver">Volver</a>
+							<input class="btn_gen left" type="submit" id="enviar" value="Enviar" /> 
+						</fieldset>
+					</form>
+					<p class="legal">Declaro que conozco y he leido las Políticas de Privacidad del Portal de Farmacias Cruz Verde. Autorizando expresamente para que la informacion que se entrega, en esta acto y que contiene datos personales sea tratada en Banco de datos por Farmacias Cruz Verde S.A. asi como para el envio de informacion de interes via mail y/o a mi telefono celular, todos los cuales se obligan a cuidar de ella y cumplir con la ley N 19.628 sobre proteccion de la Vida Privada. Declaro que los datos personales aqui contenidos, los he entregado voluntariamente y debidamente informado.</p>
+				</div>
+			</div>
+		</div>
+		
+		<div id="footer">
+			<a class="link" target="_blank" href="../images/Bases_Concurso_Guateros_2013.pdf" title="Ver Bases">Ver Bases</a>
+			<p id="logo_cv">Farmacias Cruz Verde</p>
+		</div>
+	</div>
+    
+
+	  
+</body>
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/JQuery.Jvalidate.js"></script>
+<script type="text/javascript">
+    $('.btn_volver').click(function() {
+        $('div[data-information=true]').remove();
+    });
+    $('#registro').Jvalidate({
+        success: function() {
+            var radio = $("input[type=radio]:checked").val();
+            $.ajax({
+                type: "POST",
+                url: "Service/Datos.asmx/Prueba",
+                data: $("#registro").serialize() + "&guatero=" + radio,
+                dataType: "text",
+                success: function(datos) {
+                    var xml = $.parseXML(datos);
+                    $xml = $(xml);
+                    var val = $xml.find('int').text();
+                    switch (val) {
+                        case "1":
+                            window.location.assign("compartir.html");
+                            break;
+                        case "99":
+                            window.location.assign("graciasok.html");
+                        break;
+                        default:
+                        break;
+                    }
+                }
+            });
+            return false;
+        }
+    });
+    $("#btform").on("click", function() {
+        $("#sabana").animate({ right: "800px" });
+        $("#header h1").text("Regístrate");
+
+    });
+    $(".btn_volver").on("click", function() {
+        $("#sabana").animate({ right: "0px" });
+        $("#header h1").text("Selecciona tu modelo favorito");
+    });
+
+     
+</script>
+</html>

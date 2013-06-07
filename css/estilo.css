@@ -1,0 +1,224 @@
+body{font-family:Arial, Helvetica, sans-serif; overflow:hidden;}
+@font-face {
+    font-family: 'hlmt-roundedregular';
+    src: url('font/hlmt_rounded-webfont.eot');
+    src: url('font/hlmt_rounded-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/hlmt_rounded-webfont.woff') format('woff'),
+         url('font/hlmt_rounded-webfont.ttf') format('truetype'),
+         url('font/hlmt_rounded-webfont.svg#hlmt-roundedregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#content_tab{background:url("../images/bg_guateros.jpg") no-repeat left top; width:800px; height:650px; overflow:hidden; position:relative;}
+#content_tab.bg_form{background:url("../images/bg_form.jpg") no-repeat left top;}
+#content_tab #content_text{background: url("../images/bg_center.png") no-repeat left top; display: inline-block; height: 196px; font-family: 'hlmt-roundedregular'; margin: 100px 0 0; padding: 48px 223px 104px; width: 354px;}
+#content_tab #content_text p{color:#008c15; font-size:47px; text-align:center; text-transform:uppercase; font-weight:bold; padding: 0 65px;}
+#content_tab h2{color:#93b344; font-size:25px; text-align:center; padding: 0 45px;}
+
+#content_tab.bg_inter{background:url("../images/bg_int.jpg") no-repeat left top;}
+#header{height:184px; background:url("../images/h1_inicial.png") no-repeat left top; display:inline-block; width:800px;  font-family: 'hlmt-roundedregular';}
+#header h1.inicial{color: #008C15; font-size: 30px; font-weight: bold; margin: 101px 0 0 255px; text-align: center; text-transform: uppercase; width: auto;}
+#header.bg_bambu{background: url(../images/bg_bambu.png) no-repeat 0 0; height: 96px;}
+#header h1 span{display:block; color:#92b244;}
+
+/* CARRUSEL */
+#content_carrusel{display:inline-block; width:800px; position:relative; z-index:5;}
+ul#pen{display:block; height:471px; width:800px; overflow:hidden; z-index:1000;}
+ul#pen li.display{display:block;}
+ul#pen li{cursor:pointer; position:relative; display: none;}
+#content_carrusel .text_exp{width:190px; position:absolute; font-family: 'hlmt-roundedregular'; z-index: 2; top:105px; left:140px;}
+/*ul#pen li .sep_a{left:430px;}
+ul#pen li .sep_b{left:245px;}
+ul#pen li .sep_c{left:275px;}
+ul#pen li .sep_d{left:140px;}
+ul#pen li .sep_e{left:375px;}*/
+#content_carrusel .text_exp p{color:#90b142; font-size:20px; text-align:center; text-transform:uppercase;}
+#content_carrusel .text_exp a{margin:10px auto; display:block; cursor:pointer; text-align: center;}
+#content_carrusel .text_exp a.link{font-size:12px;}
+#content_carrusel .text_exp a.btn_gen{padding: 3px 0 0; width: 130px;}
+ul#pen li a{cursor:default;}
+ul#pen li a span{position:absolute; top:230px; left:300px; display:none;}
+ul#pen li a:hover span{display:block;}
+
+/* SELECCION_GUATEROS */
+ul#selec_pen{background:url("../images/bg_selec_guateros.jpg") top left no-repeat scroll transparent; width:467px; height:64px;	z-index:1000; position:absolute; bottom:14px; left:180px;}
+ul#selec_pen li{float:left; text-indent:-9999px; margin:5px 0 0 0;}
+ul#selec_pen li a{width:50px; height:55px; display:block;}
+
+a#guatero1{background:url(../images/guatero1.png) top left no-repeat scroll; margin-left:83px;}
+a#guatero2{background:url(../images/guatero2.png) top left no-repeat scroll; margin-left:-1px;}
+a#guatero3{background:url(../images/guatero3.png) top left no-repeat scroll; margin-left:-2px;}
+a#guatero4{background:url(../images/guatero4.png) top left no-repeat scroll; margin-left:-1px;}
+a#guatero5{background:url(../images/guatero5.png) top left no-repeat scroll; margin-left:110px;}
+
+a:hover#guatero1, a:hover#guatero2, a:hover#guatero3, a:hover#guatero4, a:hover#guatero5{background-position:bottom;}
+ul#selec_pen li a.seleccion{background-position:bottom;}
+
+/* MODAL GANADORES */
+#contenedor_ganadores {background: url("../images/bg_ganadores.jpg") no-repeat left top; height: 542px; position: relative; width: 551px;}
+#contenedor_ganadores > ul {left: 166px; position: absolute; text-align: center; top: 85px; width: 315px; }
+#contenedor_ganadores > ul li {color: #9CB24E; font-size: 16px; text-align: left;}
+#contenedor_ganadores > ul li span {color: #CCCCCC; font-size: 12px; margin-left: 7px;}
+
+/* MODAL INFOGRAFIA */
+#infografia {background: url("../images/infografia.jpg") no-repeat left top; height: 542px; width: 551px;}
+
+/* FORMULARIO REGISTRO */
+#registrate{background: url("../images/bg_peluches.png") no-repeat 40px 267px; height: 542px; position: relative; width: 800px; font-family: 'hlmt-roundedregular'; padding-top:35px; float:left;}
+#registrate p.legal{text-align:center; font-family:Arial, Helvetica, sans-serif; color:#7d7c7c; font-size:10px; background:#fff; padding:10px 15px; width:700px; margin:40px auto 0;}
+#registrate form{margin:0 auto; width: 380px;}
+#registrate form .btn_volver{float:left; margin: 4px 10px 0 85px;}
+#registrate ul {width: 360px;}
+#registrate ul li {margin: 6px 0 0; overflow:hidden;}
+#registrate ul li.check{margin-top: 15px; margin-bottom: 15px;}
+#registrate ul li.check label{color: #8C8C8B; float: left; font-family: Arial, Helvetica, sans-serif; font-size: 11px; letter-spacing: normal; text-transform: none; width: 190px; line-height:16px; height: 14px;}
+#registrate ul li.check input{float: left; margin-left: 85px; margin-right: 5px;}
+#registrate ul li label {color: #93B344; float: left; font-size: 18px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; width: 90px; line-height:26px; height: 26px;}
+#registrate ul li span { color: #9CB24E; padding: 0 3px;}
+input[type="text"] {background-color: #FAFAFA; border: 1px solid #E4E4E4; border-radius: 5px 5px 5px 5px; color: #666666; font-size: 13px; line-height: 26px; height: 26px; padding: 0 0 0 10px; box-shadow:inset 2px 2px 3px #ddd;}
+input.xl {width: 246px;}
+input.l {width: 212px;}
+input.m {width: 140px;}
+input.s {width: 107px;}
+input.xs {width: 30px;}
+input[type="submit"] {border: none; cursor: pointer; display: block; height: 46px; font-family: 'hlmt-roundedregular'; font-size:24px; margin-top: 4px; height:34px; line-height:26px; padding:1px 25px 0;}
+
+#masc {overflow: hidden; width: 800px;}
+#sabana{width:500px; position:relative; width: 1600px;}
+
+#footer{position:absolute; bottom:0; height:78px; width:800px;}
+#footer a.link{float: left; margin: 35px 0 0 20px;}
+#footer #logo_cv{background: url("../images/logo_cv.jpg") no-repeat left top; float: right; height: 61px; margin: 8px 13px 0; text-indent: -9999px; width: 89px;}
+
+#header h1{
+	text-transform: uppercase;
+	color: #93b344;
+	font-size: 36px;
+	line-height: 38px;
+	width: 100%;
+	text-align: center;
+	margin: 22px 0 0 0;
+}
+#seleccion ul {
+    display: block;
+    margin: 20px 0;
+}
+#seleccion ul li {
+    display: block;
+    float: left;
+    height: 121px;
+    margin: 20px 0 0 10px;
+    padding: 49px 0 0 11px;
+    width: 162px;
+}
+#seleccion ul li input{
+	margin-top: 30px;
+}
+#seleccion ul li input.abajo{
+	margin-top: 45px;
+}
+#seleccion ul li.model_1 {
+    background: url("../images/modelo1.png") no-repeat scroll center top transparent;
+}
+#seleccion ul li.model_2 {
+    background: url("../images/modelo2.png") no-repeat scroll center top transparent;
+}
+#seleccion ul li.model_3 {
+    background: url("../images/modelo3.png") no-repeat scroll center top transparent;
+}
+#seleccion ul li.model_4 {
+    background: url("../images/modelo4.png") no-repeat scroll center 2px transparent;
+}
+#seleccion ul li.model_5 {
+    background: url("../images/modelo5.png") no-repeat scroll center -4px transparent;
+}
+#seleccion ul li.model_6 {
+    background: url("../images/modelo6.png") no-repeat scroll center -2px transparent;
+}
+.btn_volver{
+	border: 1px solid #92b240;
+	padding: 6px 15px 0;
+	background-color: #dfe9c9;
+	color: #74c061;
+	font: 24px/26px 'hlmt-roundedregular';
+	text-transform: uppercase;
+}
+#seleccion{float: left; margin: 0 auto 20px; padding: 0 125px; width: 550px;}
+p.tit{
+	color: #92b240;
+	font: 50px/52px 'hlmt-roundedregular';
+	width: 100%;
+	text-align: center;
+	margin-top: 50px;
+}
+p.bajada{
+	color: #92b240;
+	font: 30px/32px 'hlmt-roundedregular';
+	width: 100%;
+	text-align: center;
+}
+.participando{
+	background: url("../images/fnd_participando.png") no-repeat 0 0;
+	position: relative;
+	width: 528px;
+	display: block;
+	margin: 20px auto;
+	height: 351px;
+}
+.participando p{
+	position: absolute;
+	bottom: 45px;
+	left: 200px;
+	width: 175px;
+	color: #92b240;
+	font: 28px/30px 'hlmt-roundedregular';
+}
+a.compartir{
+	position: absolute;
+	bottom: -6px;
+	left: 190px;
+}
+a#modo_de_uso {
+    background: url("../images/btn_modo_de_uso.png") no-repeat scroll left top;
+    display: block;
+    height: 88px;
+    left: 20px;
+    position: absolute;
+    text-indent: -9999px;
+    top: 100px;
+    width: 102px;
+    z-index: 1001;
+}
+.transition {
+    transition: all 0.5s ease 0s;
+}
+a.ver_ganadores{
+	color: #92b240;
+	text-decoration: underline;
+	position: absolute;
+	bottom: -20px;
+	right: 40px;
+	font: 13px/15px Arial;
+}
+.conoce{
+	color: #92b240;
+	font: 24px/26px 'hlmt-roundedregular';
+	width: 100%;
+	text-align: center;
+	padding-top: 20px;
+}
+a.cononce_manada{
+	width: 150px;
+	margin: 20px auto 0;
+	display: block;
+	text-align: center;
+}
+
+/* ESPECIFICOS */
+.link{color:#688324; font-size:16px; text-decoration:underline; font-family:Arial, Helvetica, sans-serif;}
+.btn_gen{background:#88AC2E; color: #FFFFFF; font-family: 'hlmt-roundedregular'; font-size: 24px; line-height: 28px; padding: 6px 35px 0; text-shadow: -3px 2px 2px #516925; text-transform: uppercase;}
+.btn_gen:hover{background:#008822;}
+.right{float:right;}
+.left{float:left;}
